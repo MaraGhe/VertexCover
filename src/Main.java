@@ -45,7 +45,17 @@ public class Main {
                 System.out.println("Brute force for " + inputFiles[i] + " ....");
                 BruteForce bruteForce = new BruteForce(graph);
                 output = bruteForce.execute();
-                writer.println(output.toString());
+                writer.println(output.toString() + "\n");
+
+                System.out.println("Approximation for " + inputFiles[i] + " ....");
+                Approximation approximation = new Approximation(graph);
+                output = approximation.execute();
+                writer.println(output.toString() + "\n");
+
+                System.out.println("Clever Greedy for " + inputFiles[i] + " ....");
+                CleverGreedy cleverGreedy = new CleverGreedy(graph);
+                output = cleverGreedy.execute();
+                writer.println(output.toString() + "\n");
 
                 writer.close();
 //            } catch (Exception e) {

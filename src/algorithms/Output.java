@@ -29,7 +29,6 @@ public class Output {
         for (int v : vertexes) {
             s += v + " ";
         }
-        s += "\n";
         return s;
     }
 }

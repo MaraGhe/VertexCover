@@ -3,16 +3,15 @@ package algorithms;
 import graph.Graph;
 
 import java.util.LinkedList;
-import java.util.List;
 
-public class Approximation {
+public class CleverGreedy {
     private Graph graph;
     private LinkedList<Integer> solution;
-    private String name = "Approximation";
+    private String name = "Clever Greedy";
 
     private static int TIMEOUT_MS = 60000;
 
-    public Approximation(Graph graph) {
+    public CleverGreedy(Graph graph) {
         solution = new LinkedList<>();
         this.graph = graph;
     }
