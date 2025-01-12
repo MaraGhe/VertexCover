@@ -26,15 +26,6 @@ public class CleverGreedy {
                 degreeList.add(v);
         degreeList.sort((v1, v2) -> graph.getDegree(v2) - graph.getDegree(v1));
 
-//        while (!degreeList.isEmpty()) {
-//            int v = degreeList.removeFirst();
-//            if (!solution.contains(v)) {
-//                solution.add(v);
-//                for (int w : graph.getAdj(v))
-//                    degreeList.remove((Object) w);
-//            }
-//        }
-
         Graph copy = new Graph(graph);
         while (copy.getTotalEdges() > 0 && !degreeList.isEmpty()) {
             int v = degreeList.removeFirst();
