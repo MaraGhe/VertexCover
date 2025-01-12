@@ -35,12 +35,14 @@ public class BruteForce {
                            LinkedList<Integer> solution, long startTime) throws Exception {
         if (System.currentTimeMillis() - startTime >= TIMEOUT_MS)
             throw new Exception("TIMEOUT");
+
         if (graph.isVertexCover(list) && (solution.size() == 0 || list.size() < solution.size())) {
             solution.clear();
             for (int v : list)
                 solution.add(v);
             return;
         }
+
         for (int v = 0; v < graph.getTotalVertexes(); v++) {
             if (!list.contains(v)) {
                 list.add(v);

@@ -20,21 +20,16 @@ public class Approximation {
     public Output execute() {
         long startTime = System.currentTimeMillis();
 
-        try {
-            for (int v = 1; v <= graph.getTotalVertexes(); v++) {
-                if (!solution.contains(v)) {
-                    for (int w : graph.getAdj(v))
-                        if (!solution.contains(w)) {
-                            solution.add(v);
-                            solution.add(w);
-                            break;
-                        }
-                }
-                if (System.currentTimeMillis() - startTime >= TIMEOUT_MS)
-                    throw new Exception("TIMEOUT");
+        for (int v = 1; v <= graph.getTotalVertexes(); v++) {
+            if (!solution.contains(v)) {
+                for (int w : graph.getAdj(v))
+                    if (!solution.contains(w)) {
+                        solution.add(v);
+                        solution.add(w);
+                        break;
+                    }
             }
-        } catch (Exception e) {
-            if (e.getMessage().equals("TIMEOUT"))
+            if (System.currentTimeMillis() - startTime >= TIMEOUT_MS)
                 return new Output(name, -1, 0, null);
         }
         long endTime = System.currentTimeMillis();

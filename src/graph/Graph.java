@@ -9,17 +9,20 @@ public class Graph {
 
     public Graph(int totalVertexes) {
         this.totalVertexes = totalVertexes;
-        adj = new LinkedList[totalVertexes];
-        for (int i = 0; i < totalVertexes; i++)
+        adj = new LinkedList[totalVertexes + 1];
+        for (int i = 0; i <= totalVertexes; i++)
             adj[i] = new LinkedList();
     }
 
     public Graph(Graph other) {
         totalVertexes = other.totalVertexes;
         totalEdges = other.totalEdges;
-        for (int v = 0; v < totalVertexes; v++)
+        adj = new LinkedList[totalVertexes + 1];
+        for (int v = 0; v < totalVertexes; v++) {
+            adj[v] = new LinkedList();
             for (int w : other.adj[v])
                 adj[v].add(w);
+        }
     }
 
     public void addEdge(int v, int w) {
@@ -33,8 +36,8 @@ public class Graph {
     public void removeEdge(int v, int w) {
         if (!existsEdge(v, w))
             return;
-        adj[v].remove(v);
-        adj[w].remove(v);
+        adj[v].remove((Object) v);
+        adj[w].remove((Object) v);
         if (getDegree(v) == 0)
             totalVertexes--;
         if (getDegree(w) == 0)
@@ -45,7 +48,6 @@ public class Graph {
     public void removeVertex(int v) {
         for (int w = 0; w < totalVertexes; w++) {
             removeEdge(v, w);
-            removeEdge(w, v);
         }
     }
 

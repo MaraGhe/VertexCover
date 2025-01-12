@@ -3,7 +3,6 @@ import algorithms.*;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.File;
 
@@ -24,7 +23,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Output output;
         for (int i = 0; i < nrOfTests; i++) {
-            //try {
+            try {
                 Scanner scanner = new Scanner(new File("input/" + inputFiles[i]));
 
                 int N, M;
@@ -42,25 +41,25 @@ public class Main {
 
                 PrintWriter writer = new PrintWriter("output/" + outputFiles[i]);
 
-                System.out.println("Brute force for " + inputFiles[i] + " ....");
+                System.out.println("Testing Backtracking for " + inputFiles[i] + " ....");
                 BruteForce bruteForce = new BruteForce(graph);
                 output = bruteForce.execute();
                 writer.println(output.toString() + "\n");
 
-                System.out.println("Approximation for " + inputFiles[i] + " ....");
+                System.out.println("Testing Approximation for " + inputFiles[i] + " ....");
                 Approximation approximation = new Approximation(graph);
                 output = approximation.execute();
                 writer.println(output.toString() + "\n");
 
-                System.out.println("Clever Greedy for " + inputFiles[i] + " ....");
+                System.out.println("Testing Clever Greedy for " + inputFiles[i] + " ....");
                 CleverGreedy cleverGreedy = new CleverGreedy(graph);
                 output = cleverGreedy.execute();
                 writer.println(output.toString() + "\n");
 
                 writer.close();
-//            } catch (Exception e) {
-//                System.out.println(e.getMessage() + " for file " + inputFiles[i]);
-//            }
+            } catch (Exception e) {
+                System.out.println(e.getMessage() + " for file " + inputFiles[i]);
+            }
         }
     }
 }
