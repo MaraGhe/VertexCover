@@ -1,6 +1,7 @@
 package algorithms;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Output {
@@ -18,6 +19,7 @@ public class Output {
             for (int v : vertexes) {
                 this.vertexes.add(v + 1);
             }
+            this.vertexes.sort(Comparator.comparingInt(v -> v));
         } catch (Exception e) {}
     }
 
