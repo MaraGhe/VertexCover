@@ -1,0 +1,10 @@
+TIMEOUT for Backtracking (brute force): execution time has exceeded the time limit of 60 000 miliseconds (1 minute)
+
+Approximation completed in 0 miliseconds
+16
+2 3 4 6 7 8 9 10 11 12 13 14 16 17 18 19 
+
+Clever Greedy completed in 0 miliseconds
+10
+2 6 7 10 11 12 16 17 18 19 
+

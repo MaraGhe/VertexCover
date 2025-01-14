@@ -1,12 +1,12 @@
-Backtracking (brute force) completed in 16 miliseconds
-3
-1 2 6 
+Backtracking (brute force) completed in 0 miliseconds
+2
+2 4 
 
 Approximation completed in 0 miliseconds
 4
-1 2 6 7 
+1 2 3 4 
 
 Clever Greedy completed in 0 miliseconds
-5
-2 3 4 6 7 
+3
+2 4 5 
 
