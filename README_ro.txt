@@ -38,3 +38,8 @@ test_10_large_connected_graph:
 test_12_large_complete_graph:
 19
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+
+Specificatiile sistemului de calcul pe care au fost rulate testele:
+    Sistem de operare: Windows Subsystem for Linux - Ubuntu WSL for Windows 10
+    Procesor: AMD Ryzen 5 4500U cu frecventa de baza de 2,38 GHz
+    Memorie disponibila: 15,4/16 GB la viteza de 3200 MHz
