@@ -10,10 +10,8 @@ public class CleverGreedy {
     private LinkedList<Integer> solution;
     private String name = "Clever Greedy";
 
-    private static int TIMEOUT_MS = 60000;
 
     public CleverGreedy(Graph graph) {
-        degreeList = new LinkedList<>();
         solution = new LinkedList<>();
         this.graph = graph;
     }
@@ -21,6 +19,7 @@ public class CleverGreedy {
     public Output execute() {
         long startTime = System.currentTimeMillis();
 
+        degreeList = new LinkedList<>();
         for (int v = 1; v <= graph.getTotalVertexes(); v++)
             if (graph.getDegree(v) > 0)
                 degreeList.add(v);
@@ -29,8 +28,19 @@ public class CleverGreedy {
         Graph copy = new Graph(graph);
         while (copy.getTotalEdges() > 0 && !degreeList.isEmpty()) {
             int v = degreeList.removeFirst();
-            solution.add(v);
-            copy.removeVertex(v);
+            if (copy.getDegree(v) > 0) {
+                solution.add(v);
+                copy.removeVertex(v);
+
+                // update the list of degrees after a vertex removal
+                degreeList = new LinkedList<>();
+                for (int w = 1; w <= graph.getTotalVertexes(); w++)
+                    if (graph.getDegree(w) > 0 && !solution.contains(w))
+                        degreeList.add(w);
+                degreeList.sort((v1, v2) -> copy.getDegree(v2) - copy.getDegree(v1));
+            } else {
+                break;
+            }
         }
 
         long endTime = System.currentTimeMillis();

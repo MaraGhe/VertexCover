@@ -7,18 +7,20 @@ import java.util.Scanner;
 import java.io.File;
 
 public class Main {
-    static String[] inputFiles = {"test_1_one_isolated_vertex.in", "test_2_multiple_isolated_vertexes.in",
-            "test_3_separate_components.in", "test_4_large_line_graph.in", "test_5_circular_graph.in",
-            "test_6_balanced_tree.in", "test_7_unbalanced_tree.in", "test_8_small_connected_graph.in",
-            "test_9_medium_connected_graph.in", "test_10_large_connected_graph.in",
-            "test_11_small_complete_graph.in", "test_12_large_complete_graph.in"};
-    static String[] outputFiles = {"test_1_one_isolated_vertex.out", "test_2_multiple_isolated_vertexes.out",
-            "test_3_separate_components.out", "test_4_large_line_graph.out", "test_5_circular_graph.out",
-            "test_6_balanced_tree.out", "test_7_unbalanced_tree.out", "test_8_small_connected_graph.out",
-            "test_9_medium_connected_graph.out", "test_10_large_connected_graph.out",
-            "test_11_small_complete_graph.out", "test_12_large_complete_graph.out"};
+    static String[] inputFiles = {"test_1_null_graph.in", "test_2_isolated_vertexes.in", "test_3_multiple_isolated_vertexes.in", "test_4_separate_components_1.in",
+            "test_5_separate_components_2.in", "test_6_separate_components_3.in", "test_7_separate_components_4.in", "test_8_line_graph_small.in",
+            "test_9_line_graph_medium.in", "test_10_line_graph_large.in", "test_11_circular_graph_medium.in", "test_12_circular_graph_large.in",
+            "test_13_tree_balanced.in", "test_14_tree_unbalanced.in", "test_15_tree_multiple.in", "test_16_connected_graph_small.in",
+            "test_17_connected_graph_medium.in", "test_18_connected_graph_large.in", "test_19_complete_graph_small.in", "test_20_complete_graph_large.in"
+            };
+    static String[] outputFiles = {"test_1_null_graph.out", "test_2_isolated_vertexes.out", "test_3_multiple_isolated_vertexes.out", "test_4_separate_components_1.out",
+            "test_5_separate_components_2.out", "test_6_separate_components_3.out", "test_7_separate_components_4.out", "test_8_line_graph_small.out",
+            "test_9_line_graph_medium.out", "test_10_line_graph_large.out", "test_11_circular_graph_medium.out", "test_12_circular_graph_large.out",
+            "test_13_tree_balanced.out", "test_14_tree_unbalanced.out", "test_15_tree_multiple.out", "test_16_connected_graph_small.out",
+            "test_17_connected_graph_medium.out", "test_18_connected_graph_large.out", "test_19_complete_graph_small.out", "test_20_complete_graph_large.out"
+            };
 
-    final static int nrOfTests = 12;
+    final static int nrOfTests = 20;
 
     public static void main(String[] args) throws FileNotFoundException {
         Output output;
